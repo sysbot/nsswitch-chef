@@ -4,6 +4,6 @@
 
 <% if (node[:nsswitch]) %>
   <% node[:nsswitch].each do |key, data| %>
-<%= "#{key}" %>:  <%= "#{data.join(" ")}" %>
+<%= key %>:  <%= data.join(" ") %>
   <%end %>
 <%end %>
