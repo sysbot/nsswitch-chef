@@ -22,33 +22,33 @@ No other cookbooks needed.
 Attributes
 ==========
 
-node.default[:nsswitch] = {
-  :passwd => ["files"],
-  :group => ["files"],
-  :shadow => ["files"],
-  :hosts => ["files", "dns"],
-  :networks => ["files"],
-  :protocols => ["db","files"],
-  :services => ["db","files"],
-  :ethers => ["db","files"],
-  :rpc => ["db","files"],
-  :netgroup => ["nis"]
-}
+    node.default[:nsswitch] = {
+      :passwd => ["files"],
+      :group => ["files"],
+      :shadow => ["files"],
+      :hosts => ["files", "dns"],
+      :networks => ["files"],
+      :protocols => ["db","files"],
+      :services => ["db","files"],
+      :ethers => ["db","files"],
+      :rpc => ["db","files"],
+      :netgroup => ["nis"]
+    }
 
 Usage
 =====
 
 To add an extra service to each of the database, use:
 
-nsswitch_source(:passwd) { param "ldap"}
-nsswitch_source(:group) { param "ldap"}
-nsswitch_source(:hosts) { param "ldap"}
-nsswitch_source(:networks) { param "ldap"}
+    nsswitch_source(:passwd) { param "ldap"}
+    nsswitch_source(:group) { param "ldap"}
+    nsswitch_source(:hosts) { param "ldap"}
+    nsswitch_source(:networks) { param "ldap"}
 
 Which will produce the nsswitch.conf file as follow:
 #nsswitch.conf
 
-passwd:  files ldap
-group:  files ldap
-hosts:  files dns ldap
-networks:  files ldap
+    passwd:  files ldap
+    group:  files ldap
+    hosts:  files dns ldap
+    networks:  files ldap
