@@ -1,0 +1,21 @@
+---
+driver:
+  name: vagrant
+  customize:
+    memory: 1024
+
+provisioner:
+  name: chef_zero
+  require_chef_omnibus: false
+
+platforms:
+- name: ubuntu-12.04
+  driver:
+    box: ubuntu-12.04
+    box_url: https://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-amd64-vagrant-disk1.box
+
+suites:
+- name: default
+  run_list:
+    - recipe[a::b]
+  attributes: { region: "example"}
