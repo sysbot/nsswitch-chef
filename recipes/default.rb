@@ -18,5 +18,7 @@
 # write the default nsswitch.conf file
 template "/etc/nsswitch.conf" do
 	source "nsswitch.conf.erb"
-	mode "0644"
+	mode 00644
+  owner "root"
+  group "root"
 end
