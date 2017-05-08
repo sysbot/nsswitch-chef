@@ -24,5 +24,5 @@ def initialize(*args)
   notifies :create, "template[/etc/nsswitch.conf]"
 end
 
-attribute :name, :kind_of => [String, NilClass], :name_attribute => true, :default => nil
+attribute :name, :kind_of => [String, NilClass], :name_attribute => true
 attribute :param,  :kind_of => [String],  :required => true
